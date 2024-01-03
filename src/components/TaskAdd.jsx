@@ -20,7 +20,7 @@ export const TaskAdd = ({handleNewTask}) => {
         onResetForm();
     }
   return (
-    <form onSubmit={onFormSubmit}>
+    <form className='form_add_task' onSubmit={onFormSubmit}>
         <input
             type="text" 
             className='input_add' 
