@@ -3,7 +3,8 @@ import './App.css'
 import { Header } from './components/Header'
 import { TaskAdd } from './components/TaskAdd'
 import { TaskList } from './components/TaskList'
-import { taskUse } from './hooks/taskUse'
+import { taskUse } from './hooks/useTask'
+
 
 function App() {
   const {

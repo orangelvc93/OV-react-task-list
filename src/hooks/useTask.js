@@ -19,13 +19,14 @@ export const taskUse = () => {
 
     //Guardar en local Storage
     useEffect(() => {
+        console.log({ tasks })
         localStorage.setItem('tasks', JSON.stringify(tasks))
     }, [tasks]);
 
     // Seleccionamos las opciones a realizar
     const handleNewTask = task => {
         const action = {
-            type: "Add Task",
+            type: "  ",
             payload: task,
         }
         dispatch(action)

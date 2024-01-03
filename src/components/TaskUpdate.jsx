@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { FaEdit } from "react-icons/fa";
-import { taskForm } from '../hooks/taskForm';
+import { taskForm } from '../hooks/useForm';
 
 export const TaskUpdate = ({task, handleUpdateTask}) => {
 
@@ -12,21 +12,24 @@ export const TaskUpdate = ({task, handleUpdateTask}) => {
     const focusInputRef = useRef()
 
     const onSubmitUpdate = e => {
+
         e.preventDefault()
 
         const id = task.id;
-        const description = task.description;
-
+        const description = updateDescription;
         handleUpdateTask(id, description )
 
         setDisabled(!disabled)
         focusInputRef.current.focus()
+
+
     }
     
   return (
     <form onSubmit={onSubmitUpdate}>
         <input
             type="text" 
+            key={task.id}
              className={`input_update ${task?.done ? 'text_decoration_dashed' : ""}`}  
             name='updateDescription' 
             value={updateDescription}
